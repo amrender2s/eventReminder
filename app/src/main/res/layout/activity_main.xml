@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEventActivity"
+    android:background="#EDFBFA">
+
+    <EditText
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:hint="Reminder Title........."
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="italic"
+        android:inputType="textMultiLine|textAutoCorrect|textAutoComplete"
+        android:textColor="#8E05A6" />
+    <EditText
+        android:id="@+id/info"
+        app:layout_constraintTop_toBottomOf="@id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:hint="Event Info......"
+        android:textAlignment="center"
+        android:textSize="27dp"
+        android:textStyle="italic"
+        android:inputType="textMultiLine|textAutoCorrect|textAutoComplete"
+        android:textColor="#8E05A6" />
+
+    <LinearLayout
+        android:id="@+id/dayLayout"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintTop_toBottomOf="@id/info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:background="@drawable/calander"
+            android:layout_marginHorizontal="10dp"/>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/today"
+                android:text="Today"
+                android:layout_width="90dp"
+                android:onClick="today"
+                android:inputType="date"
+                android:layout_height="wrap_content"
+                android:textColor="#035A78"/>
+            <RadioButton
+                android:id="@+id/tomorrow"
+                android:inputType="date"
+                android:text="Tomorrow"
+                android:onClick="tomorrow"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:textColor="#094808"/>
+            <RadioButton
+                android:id="@+id/onCalander"
+                android:text="On Calander"
+                android:layout_width="110dp"
+                android:onClick="calendar"
+                android:inputType="date"
+                android:textColor="#530971"
+                android:layout_height="wrap_content"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/timeLayout"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintTop_toBottomOf="@id/dayLayout"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/clockLogo"
+            app:layout_constraintTop_toBottomOf="@id/about"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/clock"/>
+        <EditText
+            android:id="@+id/time"
+            android:hint="Time....."
+            android:textAlignment="center"
+            android:onClick="time"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="time"
+            android:textColor="#829307"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/duration"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintTop_toBottomOf="@id/timeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bell"
+            android:layout_marginHorizontal="10dp"/>
+        <Button
+            android:id="@+id/duration1"
+            android:text="15 Minutes"
+            android:onClick="dur1"
+            android:layout_width="100dp"
+            android:textColor="#FF5733  "
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/duration2"
+            android:onClick="dur2"
+            android:textColor="#0A6207  "
+            android:text="30 Minutes"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_gravity="center_vertical"
+            android:id="@+id/duration3"
+            android:onClick="dur3"
+            android:textColor="#0E84B8"
+            android:text="1 hour"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/locationLayout"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintTop_toBottomOf="@id/duration"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/locationLogo"
+            app:layout_constraintTop_toBottomOf="@id/about"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/location"/>
+        <EditText
+            android:id="@+id/location"
+            android:hint="Enter Location of Event........."
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine|textAutoComplete|textAutoCorrect"
+            android:textColor="#021CF9"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:paddingVertical="10dp"
+        app:layout_constraintTop_toBottomOf="@id/locationLayout"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button1"
+        android:textSize="30sp"
+        android:onClick="save"
+        android:typeface="serif"
+        android:text="save" />
+
+    <Button
+        android:id="@+id/cancle"
+        app:layout_constraintTop_toBottomOf="@id/submit"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="120dp"
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:background="@drawable/button2"
+        android:typeface="serif"
+        android:text="cancle"
+        android:onClick="cancle"
+        android:layout_height="wrap_content" />
+</android.support.constraint.ConstraintLayout>
